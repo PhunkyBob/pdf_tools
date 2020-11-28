@@ -2,7 +2,10 @@
 
 ## pdf_merge.py 
 
-### Version 0.1.0 (2020-11-28)
+### Version 0.02.0 (2020-11-28)
+- [NEW] Fonctionnement en ligne de commande. 
+
+### Version 0.01.0 (2020-11-28)
 - [NEW] Version initiale. 
 - [NEW] Fusion de plusieurs fichiers PDF en un seul. 
 

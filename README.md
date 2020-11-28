@@ -17,12 +17,11 @@ Si tous les fichiers existent, l'outil demande le nom du fichier de destination.
 ```
 pdf_merge.py <file_out> <file_in_1> [file_in_2 ...]
 ```
-(pas encore disponible)  
 file_out : le chemin vers le fichier PDF de destination.  
 file_in_1 : le chemin vers le 1er fichier PDF à fusionner.  
-file_in_2 : le chemin vers le 2em fichier PDF à fusionner.  
+file_in_2 (optionnel) : le chemin vers le 2em fichier PDF à fusionner.  
 ...  
-file_in_n : le chemin vers le Nem fichier PDF à fusionner.  
+file_in_n (optionnel) : le chemin vers le Nem fichier PDF à fusionner.  
   
   
 ### pdf_extract.py 
@@ -45,10 +44,10 @@ pdf_extract.py <file_in> *
 ```
 file_in : le chemin vers le fichier PDF dont on veut des pages.  
 page_1 : le numéro de la 1er page à extraire. Possibilité de définir une plage avec `X-Y`.  
-page_2 : le numéro de la 2em page à extraire.  
+page_2 (optionnel) : le numéro de la 2em page à extraire.  
 ...  
-page_n : le numéro de la Nem page à extraire.  
-* : extrait toutes les pages.  
+page_n (optionnel) : le numéro de la Nem page à extraire.  
+`*` : extrait toutes les pages.  
   
   
 ## Installation
