@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__version__ = "0.1.1"
+__version__ = "0.2.0"
 """
 pdf_extract.py
 
@@ -15,14 +15,24 @@ import os.path
 import re
 
 if __name__ == "__main__":
-    pdfs = []
+    console_mode = False
+    file_in = ""
+    pages_txt = ""
+    if len(sys.argv) > 1:
+        # Il y a au moins 1 argument.
+        file_in = sys.argv[1]
 
-    file_in = input("Fichier d'entrée : ")
+    if len(sys.argv) > 2:
+        pages_txt = " ".join(sys.argv[2:])
+        console_mode = True
+
+    if len(file_in) == 0:
+        file_in = input("Fichier d'entrée : ")
     if file_in[0] == '"' and file_in[-1] == '"':
         file_in = file_in[1:-1]
-    answer = ""
+
     if not os.path.isfile(file_in):
-        print(f"Ce fichier n'existe pas...")
+        print(f"Le fichier d'entrée n'existe pas...")
         sys.exit()
 
     pdf = PdfFileReader(file_in)
@@ -30,7 +40,8 @@ if __name__ == "__main__":
     nb_pages = pdf.numPages
     print(f"Nombre de pages trouvées : {nb_pages}")
 
-    pages_txt = input("Pages à extraire : ")
+    if len(pages_txt) == 0:
+        pages_txt = input("Pages à extraire : ")
     pages = shlex.split(pages_txt)
     if pages_txt.strip() == "*":
         # On souhaite extraire toutes les pages.
@@ -81,5 +92,6 @@ if __name__ == "__main__":
                     f.close()
                     print("OK")
 
-    print("Terminé !")
-    os.system("pause")
+    if console_mode == False:
+        print("Terminé !")
+        os.system("pause")
