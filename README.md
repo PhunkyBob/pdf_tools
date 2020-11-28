@@ -84,7 +84,7 @@ Si vous êtes sous Linux, vous n'avez pas besoin de moi pour installer Python ou
 git clone https://github.com/PhunkyBob/pdf_tools
 ```
 ou  
-- Vous pouvez télécharger uniquement le binaire Windows (expérimental).   
+- Vous pouvez télécharger uniquement [le binaire Windows](https://github.com/PhunkyBob/pdf_tools/releases/latest) (expérimental).   
   
   
 ### Configuration
