@@ -9,6 +9,10 @@
 
 ## pdf_extract.py 
 
+### Version 0.01.1 (2020-11-28)
+- [NEW] Possibilité d'extraire toutes les pages avec `*`. 
+- [NEW] Possibilité d'extraire une plage de pages avec `X-Y`. 
+
 ### Version 0.01.0 (2020-11-28)
 - [NEW] Version initiale. 
 - [NEW] Extraction d'une liste de pages d'un fichier PDF. 

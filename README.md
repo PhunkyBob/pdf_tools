@@ -11,7 +11,7 @@ Outil qui permet de fusionner une liste de fichiers PDF vers un fichier unique.
 pdf_merge.py
 ```
 L'outil demande une liste de fichiers à fusionner (séparés par un espace). 
-Si tous les fichiers existent, il demande le nom du fichier de destination. 
+Si tous les fichiers existent, l'outil demande le nom du fichier de destination. 
 
 **Utilisation en ligne de commande**  
 ```
@@ -33,7 +33,10 @@ Outil qui permet d'extraire une liste de pages d'un PDF vers des fichiers sépar
 pdf_extract.py
 ```
 L'outil demande le chemin vers le fichier dont on veut des pages. 
-Si tous le fichier existe, il demande la liste des pages à extraire (séparées par un espace). 
+Si le fichier existe, l'outil demande la liste des pages à extraire (séparées par un espace). 
+Si on saisit uniquement `*`, toutes les pages seront extraites individuellement. 
+Si on saisit `X-Y`, les pages X à Y seront extraites dans le même document PDF. 
+ 
 
 **Utilisation en ligne de commande**  
 ```
