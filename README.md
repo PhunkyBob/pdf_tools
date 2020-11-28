@@ -24,6 +24,14 @@ file_in_2 (optionnel) : le chemin vers le 2em fichier PDF à fusionner.
 file_in_n (optionnel) : le chemin vers le Nem fichier PDF à fusionner.  
   
   
+Exemples :  
+- Pour fusionner les fichiers `in_1.pdf` et `in_2.pdf` dans `out.pdf` : 
+```
+pdf_merge out.pdf in_1.pdf in_2.pdf
+```
+Le programme créera le fichier `out.pdf`.  
+  
+  
 ### pdf_extract.py 
 Outil qui permet d'extraire une liste de pages d'un PDF vers des fichiers séparés.  
   
@@ -48,6 +56,32 @@ page_2 (optionnel) : le numéro de la 2em page à extraire.
 ...  
 page_n (optionnel) : le numéro de la Nem page à extraire.  
 `*` : extrait toutes les pages.  
+  
+  
+Exemples :  
+- Pour extraire la page 3 de `in.pdf` : 
+```
+pdf_extract in.pdf 3
+```
+Le programme créera le fichier `in_3.pdf` qui contiendra une seule page.  
+
+- Pour extraire les pages 3, 5 et 7 de `in.pdf` : 
+```
+pdf_extract in.pdf 3 5 7
+```
+Le programme créera les fichiers `in_3.pdf`, `in_5.pdf` et `in_7.pdf` qui contiendront une seule page chacun.  
+  
+- Pour extraire les pages 3 à 7 de `in.pdf` : 
+```
+pdf_extract in.pdf 3-7
+```
+Le programme créera le fichier `in_3-7.pdf` qui contiendra 5 pages.  
+  
+- Pour extraire toutes les pages `in.pdf` : 
+```
+pdf_extract in.pdf *
+```
+Le programme créera les fichiers `in_1.pdf`, `in_1.pdf`, ... `in_n.pdf` qui contiendront une seule page chacun.  
   
   
 ## Installation
