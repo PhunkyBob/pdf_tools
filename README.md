@@ -31,7 +31,13 @@ pdf_merge out.pdf in_1.pdf in_2.pdf
 ```
 Le programme créera le fichier `out.pdf`.  
   
+- Pour fusionner tous les fichiers `in_*.pdf` dans `out.pdf` : 
+```
+pdf_merge out.pdf in_*.pdf
+```
+Le programme créera le fichier `out.pdf`.  
   
+    
 ### pdf_extract.py 
 Outil qui permet d'extraire une liste de pages d'un PDF vers des fichiers séparés.  
   

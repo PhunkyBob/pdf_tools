@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 """
 pdf_extract.py
 
@@ -21,6 +21,10 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         # Il y a au moins 1 argument.
         file_in = sys.argv[1]
+
+    if file_in.strip().lower() in ("--version", "-v"):
+        print(f"{__version__}")
+        sys.exit()
 
     if len(sys.argv) > 2:
         pages_txt = " ".join(sys.argv[2:])
