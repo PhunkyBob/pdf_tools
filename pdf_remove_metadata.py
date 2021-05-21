@@ -10,9 +10,9 @@ Source : https://github.com/PhunkyBob/pdf_tools
 
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 import sys
-import shlex
 import os.path
-import re
+from shutil import move
+import uuid
 
 if __name__ == "__main__":
     console_mode = False
@@ -56,24 +56,29 @@ if __name__ == "__main__":
     if file_out[0] == '"' and file_out[-1] == '"':
         file_out = file_out[1:-1]
 
+    overwrite = False
+    rename_file_out = file_out
     if os.path.isfile(file_out):
         answer = ""
         while answer.lower() not in ("y", "yes", "o", "oui", "n", "no", "non", "q", "quit"):
             answer = input(f"Le fichier existe déjà. Ecraser [O/N] ? ")
             if answer.lower() in ("n", "no", "non", "q", "quit"):
                 sys.exit()
+        overwrite = True
+        file_out = uuid.uuid4().hex[:8] + '.pdf'
 
     pdf_merger = PdfFileMerger()
     pdf_merger.append(pdf_file_in)
-    pdf_file_in.close()
     pdf_merger.addMetadata({
         '/Producer': ''
     })
-    file_out = open(file_out, 'wb')
-    pdf_merger.write(file_out)
-
+    pdf_file_out = open(file_out, 'wb')
+    pdf_merger.write(pdf_file_out)
+    pdf_file_out.close()
     pdf_file_in.close()
-    file_out.close()
+
+    if overwrite:
+        move(file_out, rename_file_out)
 
     if console_mode == False:
         print("Terminé !")
