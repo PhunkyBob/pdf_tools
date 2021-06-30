@@ -1,7 +1,13 @@
 # Changelog
 
-## pdf_merge.py 
+## pdf_remove_metadata.py 
+### Version 0.1.1 (2021-06-30)
+- [BUGFIX] Si le fichier de sortie fait moins de 2 caractères.
 
+### Version 0.01.0 (2021-05-21)
+- [NEW] Version initiale.
+
+## pdf_merge.py 
 ### Version 0.02.1 (2020-11-28)
 - [NEW] Affichage de la version avec `--version` ou `-v`.  
 - [NEW] Possibilité d'utiliser un joker `*` pour définir les fichiers à ajouter.  
@@ -17,7 +23,7 @@
 ## pdf_extract.py 
 
 ### Version 0.02.1 (2020-11-28)
-- [NEW] Affichage de la version avec `--version` ou `-v`.
+- [NEW] Affichage de la version avec `--version` ou `-v`.  
   
 ### Version 0.02.0 (2020-11-28)
 - [NEW] Fonctionnement en ligne de commande. 

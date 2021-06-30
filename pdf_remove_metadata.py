@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 """
 pdf_remove_metadata.py
 
@@ -51,9 +51,9 @@ if __name__ == "__main__":
     for m in metadata:
         print(f"{m} : {metadata[m]}")
 
-    if len(file_out) == 0:
+    while len(file_out) == 0:
         file_out = input("Fichier de sortie : ")
-    if file_out[0] == '"' and file_out[-1] == '"':
+    if len(file_out) > 2 and file_out[0] == '"' and file_out[-1] == '"':
         file_out = file_out[1:-1]
 
     overwrite = False
